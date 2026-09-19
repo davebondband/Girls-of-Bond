@@ -18,59 +18,76 @@
       align-items: center;
       min-height: 100vh;
       margin: 0;
-      padding: 40px 20px;
+      padding: 24px 16px;
       box-sizing: border-box;
     }
+
     h1.album-title {
-      font-size: 2rem;
-      margin-bottom: 24px;
+      font-size: 1.6rem;
+      margin: 0 0 20px 0;
       text-align: center;
     }
+
+    /* Compact Player Card */
     .player-card {
       background: #1e1e1e;
-      border-radius: 16px;
-      padding: 24px;
-      max-width: 360px;
-      width: 100%;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .album-art {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 1 / 1;
       border-radius: 12px;
+      padding: 16px;
+      max-width: 380px;
+      width: 100%;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+      margin-bottom: 16px; /* Tight vertical gap between cards */
+      box-sizing: border-box;
+    }
+
+    /* Smaller, centered image */
+    .album-art {
+      width: 140px; /* Reduced from full-width */
+      height: 140px;
+      border-radius: 8px;
       object-fit: cover;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      display: block;
+      margin: 0 auto 12px auto;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     }
+
     h2 {
-      font-size: 1.4rem;
-      margin: 0 0 6px 0;
+      font-size: 1.1rem;
+      margin: 0 0 4px 0;
+      text-align: center;
     }
-    p {
+
+    p.artist {
       color: #aaa;
-      margin: 0 0 20px 0;
-      font-size: 0.95rem;
+      margin: 0 0 12px 0;
+      font-size: 0.85rem;
+      text-align: center;
     }
+
     :root {
       --plyr-color-main: #007aff;
     }
+
     .plyr {
-      border-radius: 8px;
-      margin-bottom: 20px;
+      border-radius: 6px;
+      margin-bottom: 12px;
     }
+
     .download-btn {
-      display: inline-block;
+      display: block;
+      width: 100%;
       background-color: #007aff;
       color: #ffffff;
       text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 25px;
+      padding: 8px 0;
+      border-radius: 20px;
       font-weight: bold;
+      font-size: 0.85rem;
+      text-align: center;
+      box-sizing: border-box;
       transition: background 0.2s;
     }
+
     .download-btn:hover {
       background-color: #0056b3;
     }
@@ -84,34 +101,33 @@
   <div class="player-card">
     <img src="Angel-Cover.jpg" alt="Angel With One Wing Artwork" class="album-art">
     <h2>Angel With One Wing</h2>
-    <p>davebondband (Athena Mix)</p>
+    <p class="artist">davebondband (Athena Mix)</p>
 
     <audio class="player" controls>
       <source src="Angel%20with%20one%20wing%20Athena%20Mix.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
 
-    <a href="Angel%20with%20one%20wing%20Athena%20Mix.mp3" download class="download-btn">Download Audio Track</a>
+    <a href="Angel%20with%20one%20wing%20Athena%20Mix.mp3" download class="download-btn">Download Track</a>
   </div>
 
   <!-- Track 2 Card -->
   <div class="player-card">
-    <img src="Scandal-Cover.jpg" alt="Scandal on easy Street" class="album-art">
-    <h2>Second Song Title</h2>
-    <p>davebondband</p>
+    <img src="Scandal-Cover.jpg" alt="Easy Street Artwork" class="album-art">
+    <h2>Easy Street</h2>
+    <p class="artist">davebondband</p>
 
     <audio class="player" controls>
       <source src="Easy-Street.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
 
-    <a href="Easy-Street.mp3" download class="download-btn">Download Audio Track</a>
+    <a href="Easy-Street.mp3" download class="download-btn">Download Track</a>
   </div>
 
   <!-- Include Plyr JS -->
   <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
   <script>
-    // Automatically initialize Plyr on all audio players on the page
     const players = Array.from(document.querySelectorAll('.player')).map(p => new Plyr(p, {
       controls: ['play', 'progress', 'current-time', 'mute', 'volume']
     }));
