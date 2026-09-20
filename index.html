@@ -28,7 +28,6 @@
       text-align: center;
     }
 
-    /* Compact Player Card */
     .player-card {
       background: #1e1e1e;
       border-radius: 12px;
@@ -36,13 +35,12 @@
       max-width: 380px;
       width: 100%;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
-      margin-bottom: 16px; /* Tight vertical gap between cards */
+      margin-bottom: 16px;
       box-sizing: border-box;
     }
 
-    /* Smaller, centered image */
     .album-art {
-      width: 140px; /* Reduced from full-width */
+      width: 140px;
       height: 140px;
       border-radius: 8px;
       object-fit: cover;
@@ -73,11 +71,15 @@
       margin-bottom: 12px;
     }
 
-    .download-btn {
-      display: block;
-      width: 100%;
-      background-color: #007aff;
-      color: #ffffff;
+    /* Container to hold both buttons side by side */
+    .button-group {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .btn {
+      flex: 1;
       text-decoration: none;
       padding: 8px 0;
       border-radius: 20px;
@@ -88,8 +90,23 @@
       transition: background 0.2s;
     }
 
+    .download-btn {
+      background-color: #007aff;
+      color: #ffffff;
+    }
+
     .download-btn:hover {
       background-color: #0056b3;
+    }
+
+    /* Red YouTube Button */
+    .youtube-btn {
+      background-color: #FF0000;
+      color: #ffffff;
+    }
+
+    .youtube-btn:hover {
+      background-color: #cc0000;
     }
   </style>
 </head>
@@ -108,7 +125,11 @@
       Your browser does not support the audio element.
     </audio>
 
-    <a href="Angel%20with%20one%20wing%20Athena%20Mix.mp3" download class="download-btn">Download Track</a>
+    <div class="button-group">
+      <a href="Angel%20with%20one%20wing%20Athena%20Mix.mp3" download class="btn download-btn">Download</a>
+      <!-- Replace with your actual YouTube video/channel URL -->
+      <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1" target="_blank" rel="noopener noreferrer" class="btn youtube-btn">Watch on YouTube</a>
+    </div>
   </div>
 
   <!-- Track 2 Card -->
@@ -122,7 +143,11 @@
       Your browser does not support the audio element.
     </audio>
 
-    <a href="Easy-Street.mp3" download class="download-btn">Download Track</a>
+    <div class="button-group">
+      <a href="Easy-Street.mp3" download class="btn download-btn">Download</a>
+      <!-- Replace with your actual YouTube video/channel URL -->
+      <a href="https://youtu.be/xVtYVT0nY5Q" target="_blank" rel="noopener noreferrer" class="btn youtube-btn">Watch on YouTube</a>
+    </div>
   </div>
 
   <!-- Include Plyr JS -->
