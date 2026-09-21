@@ -9,22 +9,7 @@
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #121212;
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      padding: 24px 16px;
-      box-sizing: border-box;
-    }
-
-    h1.album-title {
-      font-size: 1.6rem;
-      margin: 0 0 20px 0;
+@@ -29,177 +27,28 @@
       text-align: center;
     }
 
@@ -92,7 +77,10 @@
 
     .download-btn {
       background-color: #007aff;
+    h1.album-title a {
       color: #ffffff;
+      text-decoration: none;
+      transition: color 0.2s;
     }
 
     .download-btn:hover {
@@ -113,16 +101,20 @@
     .youtube-btn {
       background-color: #FF0000;
       color: #ffffff;
+    h1.album-title a:hover {
+      color: #007aff;
+      text-decoration: underline;
     }
 
     .youtube-btn:hover {
       background-color: #cc0000;
     }
+    /* ... remaining card CSS styles ... */
   </style>
 </head>
 <body>
 
-  <h1 class="album-title">Girls of Bond</h1>
+  <h1 class="album-">Girls of Bond</h1>
 
   <!-- Track 1 Card (Angel With One Wing) -->
   <div class="player-card">
@@ -160,37 +152,41 @@
 
   <!-- Track 3 Card (Song 3 with Facebook) -->
   <div class="player-card">
-    <img src="Song3-Cover.jpg" alt="Third Song Artwork" class="album-art">
-    <h2>Third Song Title</h2>
+    <img src="Far-Away.png" alt="Third Song Artwork" class="album-art">
+    <h2>Far Away</h2>
     <p class="artist">davebondband</p>
 
     <audio class="player" controls>
-      <source src="Third-Song.mp3" type="audio/mpeg">
+      <source src="Far-Away.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
 
     <div class="button-group">
-      <a href="Third-Song.mp3" download class="btn download-btn">Download</a>
+      <a href="Far-Away.mp3" download class="btn download-btn">Download</a>
       <a href="https://www.facebook.com/YOUR_FACEBOOK_REEL_3" target="_blank" rel="noopener noreferrer" class="btn facebook-btn">Watch on Facebook</a>
     </div>
   </div>
 
   <!-- Track 4 Card (Song 4 with Facebook) -->
   <div class="player-card">
-    <img src="Song4-Cover.jpg" alt="Fourth Song Artwork" class="album-art">
-    <h2>Fourth Song Title</h2>
+    <img src="Nothing-Personal.png" alt="Fourth Song Artwork" class="album-art">
+    <h2>Nothing Personal</h2>
     <p class="artist">davebondband</p>
 
     <audio class="player" controls>
-      <source src="Fourth-Song.mp3" type="audio/mpeg">
+      <source src="Nothing-Personal.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
 
     <div class="button-group">
-      <a href="Fourth-Song.mp3" download class="btn download-btn">Download</a>
+      <a href="Nothing-Personal.mp3" download class="btn download-btn">Download</a>
       <a href="https://www.facebook.com/YOUR_FACEBOOK_REEL_4" target="_blank" rel="noopener noreferrer" class="btn facebook-btn">Watch on Facebook</a>
     </div>
   </div>
+  <!-- Clickable Title Link -->
+  <h1 class="album-title">
+    <a href="https://www.facebook.com/davebondband" target="_blank" rel="noopener noreferrer">Girls of Bond</a>
+  </h1>
 
   <!-- Include Plyr JS -->
   <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
@@ -199,6 +195,8 @@
       controls: ['play', 'progress', 'current-time', 'mute', 'volume']
     }));
   </script>
+  <!-- Player Cards Go Here -->
 
 </body>
+</html>
 </html>
