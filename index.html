@@ -22,7 +22,7 @@
       box-sizing: border-box;
     }
 
-    /* Clickable Main Title */
+    /* Clickable Main Title Link */
     h1.album-title {
       font-size: 1.6rem;
       margin: 0 0 20px 0;
@@ -32,7 +32,7 @@
     h1.album-title a {
       color: #ffffff;
       text-decoration: none;
-      transition: color 0.2s;
+      transition: color 0.2s, text-decoration 0.2s;
     }
 
     h1.album-title a:hover {
@@ -40,84 +40,70 @@
       text-decoration: underline;
     }
 
-    /* Horizontal Row Card Container */
+    /* Compact Player Card */
     .player-card {
       background: #1e1e1e;
       border-radius: 12px;
-      padding: 12px;
-      max-width: 440px;
+      padding: 16px;
+      max-width: 380px;
       width: 100%;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       box-sizing: border-box;
-      
-      /* Flexbox Side-by-Side Row Alignment */
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 14px;
     }
 
-    /* Compact Left Thumbnail Image */
     .album-art {
-      width: 90px;
-      height: 90px;
+      width: 140px;
+      height: 140px;
       border-radius: 8px;
       object-fit: cover;
-      flex-shrink: 0;
+      display: block;
+      margin: 0 auto 12px auto;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     }
 
-    /* Right-side Content Container */
-    .card-content {
-      flex: 1;
-      min-width: 0; /* Ensures inner elements scale inside flex container */
-    }
-
     h2 {
-      font-size: 1.05rem;
-      margin: 0 0 2px 0;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      font-size: 1.1rem;
+      margin: 0 0 4px 0;
+      text-align: center;
     }
 
     p.artist {
       color: #aaa;
-      margin: 0 0 8px 0;
-      font-size: 0.8rem;
+      margin: 0 0 12px 0;
+      font-size: 0.85rem;
+      text-align: center;
     }
 
-    /* Plyr Customizations for Compact Heights */
     :root {
       --plyr-color-main: #007aff;
-      --plyr-control-spacing: 6px;
-      --plyr-font-size-base: 12px;
-      --plyr-control-icon-size: 15px;
     }
 
     .plyr {
       border-radius: 6px;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
 
     /* Button Group Layout */
     .button-group {
       display: flex;
-      gap: 8px;
+      gap: 10px;
       align-items: center;
+      margin-top: 10px;
     }
 
+    /* Main Download Button */
     .download-btn {
       flex: 1;
       background-color: #007aff;
       color: #ffffff;
       text-decoration: none;
-      padding: 6px 0;
-      border-radius: 16px;
+      padding: 8px 0;
+      border-radius: 20px;
       font-weight: bold;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       text-align: center;
+      box-sizing: border-box;
       transition: background 0.2s;
     }
 
@@ -125,9 +111,10 @@
       background-color: #0056b3;
     }
 
+    /* Circular Social Media Icon Buttons */
     .icon-btn {
-      width: 30px;
-      height: 30px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -142,11 +129,12 @@
     }
 
     .icon-btn svg {
-      width: 15px;
-      height: 15px;
+      width: 18px;
+      height: 18px;
       fill: #ffffff;
     }
 
+    /* Brand Colors */
     .facebook-icon {
       background-color: #1877F2;
     }
@@ -166,65 +154,103 @@
 </head>
 <body>
 
+  <!-- Album Title with Link -->
   <h1 class="album-title">
     <a href="https://www.facebook.com/reel/3267104106810327" target="_blank" rel="noopener noreferrer">Girls of Bond</a>
   </h1>
 
-  <!-- Track 1 Horizontal Card -->
+  <!-- Track 1 Card -->
   <div class="player-card">
     <img src="Angel-Cover.jpg" alt="Angel With One Wing Artwork" class="album-art">
-    <div class="card-content">
-      <h2>Angel With One Wing</h2>
-      <p class="artist">davebondband (Athena Mix)</p>
+    <h2>Angel With One Wing</h2>
+    <p class="artist">davebondband (Athena Mix)</p>
 
-      <audio class="player" controls>
-        <source src="Angel%20with%20one%20wing%20Athena%20Mix.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
+    <audio class="player" controls>
+      <source src="Angel%20with%20one%20wing%20Athena%20Mix.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
 
-      <div class="button-group">
-        <a href="Angel%20with%20one%20wing%20Athena%20Mix.mp3" download class="download-btn">Download</a>
-        <a href="https://www.facebook.com/reel/3267104106810327" target="_blank" rel="noopener noreferrer" class="icon-btn facebook-icon" aria-label="Watch on Facebook">
-          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </a>
-      </div>
+    <div class="button-group">
+      <a href="Angel%20with%20one%20wing%20Athena%20Mix.mp3" download class="download-btn">Download Track</a>
+      <a href="https://www.facebook.com/reel/3267104106810327" target="_blank" rel="noopener noreferrer" class="icon-btn facebook-icon" aria-label="Watch on Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
     </div>
   </div>
 
-  <!-- Track 2 Horizontal Card -->
+  <!-- Track 2 Card -->
   <div class="player-card">
     <img src="Scandal-Cover.jpg" alt="Easy Street Artwork" class="album-art">
-    <div class="card-content">
-      <h2>Easy Street</h2>
-      <p class="artist">davebondband</p>
+    <h2>Easy Street</h2>
+    <p class="artist">davebondband</p>
 
-      <audio class="player" controls>
-        <source src="Easy-Street.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
+    <audio class="player" controls>
+      <source src="Easy-Street.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
 
-      <div class="button-group">
-        <a href="Easy-Street.mp3" download class="download-btn">Download</a>
-        <a href="https://youtu.be/xVtYVT0nY5Q" target="_blank" rel="noopener noreferrer" class="icon-btn youtube-icon" aria-label="Watch on YouTube">
-          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        </a>
-      </div>
+    <div class="button-group">
+      <a href="Easy-Street.mp3" download class="download-btn">Download Track</a>
+      <a href="https://youtu.be/xVtYVT0nY5Q" target="_blank" rel="noopener noreferrer" class="icon-btn youtube-icon" aria-label="Watch on YouTube">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Track 3 Card -->
+  <div class="player-card">
+    <img src="Song3-Cover.jpg" alt="Third Song Artwork" class="album-art">
+    <h2>Third Song Title</h2>
+    <p class="artist">davebondband</p>
+
+    <audio class="player" controls>
+      <source src="Third-Song.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="button-group">
+      <a href="Third-Song.mp3" download class="download-btn">Download Track</a>
+      <a href="https://www.facebook.com/YOUR_FACEBOOK_REEL_3" target="_blank" rel="noopener noreferrer" class="icon-btn facebook-icon" aria-label="Watch on Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Track 4 Card -->
+  <div class="player-card">
+    <img src="Song4-Cover.jpg" alt="Fourth Song Artwork" class="album-art">
+    <h2>Fourth Song Title</h2>
+    <p class="artist">davebondband</p>
+
+    <audio class="player" controls>
+      <source src="Fourth-Song.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="button-group">
+      <a href="Fourth-Song.mp3" download class="download-btn">Download Track</a>
+      <a href="https://www.facebook.com/YOUR_FACEBOOK_REEL_4" target="_blank" rel="noopener noreferrer" class="icon-btn facebook-icon" aria-label="Watch on Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
     </div>
   </div>
 
   <!-- Include Plyr JS & Autoplay Script -->
   <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
   <script>
+    // Initialize Plyr on all audio players
     const players = Array.from(document.querySelectorAll('.player')).map(p => new Plyr(p, {
       controls: ['play', 'progress', 'current-time', 'mute', 'volume']
     }));
 
+    // Continuous Autoplay: Plays the next track automatically when current track ends
     players.forEach((player, index) => {
       player.on('ended', () => {
         if (index + 1 < players.length) {
           const nextPlayer = players[index + 1];
           nextPlayer.play();
           
+          // Smoothly scroll the next card into view on mobile
           nextPlayer.elements.container.scrollIntoView({ 
             behavior: 'smooth', 
             block: 'center' 
@@ -236,5 +262,3 @@
 
 </body>
 </html>
-
-
