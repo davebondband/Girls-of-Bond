@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Girls of Bond - davebondband</title>
 
+  <!-- Include Plyr CSS -->
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
   <style>
@@ -21,12 +22,25 @@
       box-sizing: border-box;
     }
 
+    /* Clickable Main Title Link */
     h1.album-title {
       font-size: 1.6rem;
       margin: 0 0 20px 0;
       text-align: center;
     }
 
+    h1.album-title a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.2s, text-decoration 0.2s;
+    }
+
+    h1.album-title a:hover {
+      color: #007aff;
+      text-decoration: underline;
+    }
+
+    /* Compact Player Card */
     .player-card {
       background: #1e1e1e;
       border-radius: 12px;
@@ -70,15 +84,19 @@
       margin-bottom: 12px;
     }
 
-    /* Container for buttons */
+    /* Button Group Layout */
     .button-group {
       display: flex;
-      gap: 8px;
-      margin-top: 8px;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
     }
 
-    .btn {
+    /* Main Download Button */
+    .download-btn {
       flex: 1;
+      background-color: #007aff;
+      color: #ffffff;
       text-decoration: none;
       padding: 8px 0;
       border-radius: 20px;
@@ -89,68 +107,80 @@
       transition: background 0.2s;
     }
 
-    .download-btn {
-      background-color: #007aff;
-      color: #ffffff;
-    }
-
     .download-btn:hover {
       background-color: #0056b3;
     }
 
-    /* Facebook Button Styling */
-    .facebook-btn {
-      background-color: #1877F2;
-      color: #ffffff;
+    /* Circular Social Media Icon Buttons */
+    .icon-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.2s, background-color 0.2s;
+      flex-shrink: 0;
     }
 
-    .facebook-btn:hover {
+    .icon-btn:hover {
+      transform: scale(1.08);
+    }
+
+    .icon-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: #ffffff;
+    }
+
+    /* Brand Colors */
+    .facebook-icon {
+      background-color: #1877F2;
+    }
+
+    .facebook-icon:hover {
       background-color: #145dbf;
     }
 
-    /* YouTube Button Styling */
-    .youtube-btn {
+    .youtube-icon {
       background-color: #FF0000;
-      color: #ffffff;
     }
 
-    .youtube-btn:hover {
+    .youtube-icon:hover {
       background-color: #cc0000;
     }
   </style>
 </head>
 <body>
 
-  <!-- Clickable Title Link -->
+  <!-- Album Title with Link -->
   <h1 class="album-title">
-    <a href="https://www.facebook.com/davebondband" target="_blank" rel="noopener noreferrer">Girls of Bond</a>
+    <a href="https://www.facebook.com/reel/3267104106810327" target="_blank" rel="noopener noreferrer">Girls of Bond</a>
   </h1>
 
-  <!-- Player Cards Go Here -->
-
-</body>
-</html>
-  <!-- Track 1 Card (Far Away with Facebook) -->
+  <!-- Track 1 Card -->
   <div class="player-card">
-    <img src="Far-Away-Cover.jpg" alt="Far-Away Artwork" class="album-art">
-    <h2>Far Away</h2>
-    <p class="artist">davebondband</p>
+    <img src="Angel-Cover.jpg" alt="Angel With One Wing Artwork" class="album-art">
+    <h2>Angel With One Wing</h2>
+    <p class="artist">davebondband (Athena Mix)</p>
 
     <audio class="player" controls>
-      <source src="Far-Away.mp3" type="audio/mpeg">
+      <source src="Angel%20with%20one%20wing%20Athena%20Mix.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
 
     <div class="button-group">
-      <a href="Far-Away.mp3" download class="btn download-btn">Download</a>
-      <a href="https://www.facebook.com/YOUR_FACEBOOK_REEL_3" target="_blank" rel="noopener noreferrer" class="btn facebook-btn">Watch on Facebook</a>
+      <a href="Angel%20with%20one%20wing%20Athena%20Mix.mp3" download class="download-btn">Download Track</a>
+      <a href="https://www.facebook.com/reel/3267104106810327" target="_blank" rel="noopener noreferrer" class="icon-btn facebook-icon" aria-label="Watch on Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
     </div>
   </div>
 
-
-  <!-- Track 2 Card (Easy Street) -->
+  <!-- Track 2 Card -->
   <div class="player-card">
-    <img src="Easy-Street-Cover.jpg" alt="Easy Street Artwork" class="album-art">
+    <img src="Scandal-Cover.jpg" alt="Easy Street Artwork" class="album-art">
     <h2>Easy Street</h2>
     <p class="artist">davebondband</p>
 
@@ -160,67 +190,67 @@
     </audio>
 
     <div class="button-group">
-      <a href="Easy-Street.mp3" download class="btn download-btn">Download</a>
-      <a href="https://youtu.be/xVtYVT0nY5Q" target="_blank" rel="noopener noreferrer" class="btn youtube-btn">Watch on YouTube</a>
+      <a href="Easy-Street.mp3" download class="download-btn">Download Track</a>
+      <a href="https://youtu.be/xVtYVT0nY5Q" target="_blank" rel="noopener noreferrer" class="icon-btn youtube-icon" aria-label="Watch on YouTube">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
     </div>
   </div>
 
-  <!-- Track 3 Card (Angel With One Wing) -->
+  <!-- Track 3 Card -->
   <div class="player-card">
-    <img src="Angel-Cover.jpg" alt="Angel With One Wing Artwork" class="album-art">
-    <h2>Angel With One Wing</h2>
+    <img src="Song3-Cover.jpg" alt="Third Song Artwork" class="album-art">
+    <h2>Third Song Title</h2>
     <p class="artist">davebondband</p>
 
     <audio class="player" controls>
-      <source src="Angel.mp3" type="audio/mpeg">
+      <source src="Third-Song.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
 
     <div class="button-group">
-      <a href="Angel.mp3" download class="btn download-btn">Download</a>
-      <a href="https://www.facebook.com/reel/3267104106810327" target="_blank" rel="noopener noreferrer" class="btn facebook-btn">Watch on Facebook</a>
+      <a href="Third-Song.mp3" download class="download-btn">Download Track</a>
+      <a href="https://www.facebook.com/YOUR_FACEBOOK_REEL_3" target="_blank" rel="noopener noreferrer" class="icon-btn facebook-icon" aria-label="Watch on Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
     </div>
   </div>
-  
-  <!-- Track 4 Card (Nothing Personal) -->
+
+  <!-- Track 4 Card -->
   <div class="player-card">
-    <img src="Nothing-Personal-Cover.jpg" alt="Nothing Personal Artwork" class="album-art">
-    <h2>Nothing Personal</h2>
+    <img src="Song4-Cover.jpg" alt="Fourth Song Artwork" class="album-art">
+    <h2>Fourth Song Title</h2>
     <p class="artist">davebondband</p>
 
     <audio class="player" controls>
-      <source src="Nothing-Personal.mp3" type="audio/mpeg">
+      <source src="Fourth-Song.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
 
     <div class="button-group">
-      <a href="Nothing-Personal.mp3" download class="btn download-btn">Download</a>
-      <a href="https://www.facebook.com/YOUR_FACEBOOK_REEL_4" target="_blank" rel="noopener noreferrer" class="btn facebook-btn">Watch on Facebook</a>
+      <a href="Fourth-Song.mp3" download class="download-btn">Download Track</a>
+      <a href="https://www.facebook.com/YOUR_FACEBOOK_REEL_4" target="_blank" rel="noopener noreferrer" class="icon-btn facebook-icon" aria-label="Watch on Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
     </div>
   </div>
-  <!-- Clickable Title Link -->
-  <h1 class="album-title">
-    <a href="https://www.facebook.com/davebondband" target="_blank" rel="noopener noreferrer">Girls of Bond</a>
-  </h1>
 
-  <!-- Include Plyr JS -->
-  <!-- Remove the old script block at the bottom of index.html and replace it with this: -->
+  <!-- Include Plyr JS & Autoplay Script -->
   <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
   <script>
-    // Initialize Plyr on all players on the page
+    // Initialize Plyr on all audio players
     const players = Array.from(document.querySelectorAll('.player')).map(p => new Plyr(p, {
       controls: ['play', 'progress', 'current-time', 'mute', 'volume']
     }));
 
-    // Add event listener to each player to trigger the next track when finished
+    // Continuous Autoplay: Plays the next track automatically when current track ends
     players.forEach((player, index) => {
       player.on('ended', () => {
-        // Check if there is a next player in the list
         if (index + 1 < players.length) {
           const nextPlayer = players[index + 1];
-          nextPlayer.play(); // Automatically start playing the next track
+          nextPlayer.play();
           
-          // Scroll the next card smoothly into view on mobile
+          // Smoothly scroll the next card into view on mobile
           nextPlayer.elements.container.scrollIntoView({ 
             behavior: 'smooth', 
             block: 'center' 
@@ -232,4 +262,3 @@
 
 </body>
 </html>
-
