@@ -1,25 +1,204 @@
-<!-- Include Plyr JS -->
-<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
-<script>
-  // Initialize Plyr on all players on the page
-  const players = Array.from(document.querySelectorAll('.player')).map(p => new Plyr(p, {
-    controls: ['play', 'progress', 'current-time', 'mute', 'volume']
-  }));
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Girls of Bond - davebondband</title>
 
-  // Add event listener to each player to trigger the next track when finished
-  players.forEach((player, index) => {
-    player.on('ended', () => {
-      // Check if there is a next player in the list
-      if (index + 1 < players.length) {
-        const nextPlayer = players[index + 1];
-        nextPlayer.play(); // Automatically start playing the next track
-        
-        // Scroll the next card smoothly into view on mobile
-        nextPlayer.elements.container.scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'center' 
-        });
-      }
-    });
-  });
-</script>
+  <!-- Include Plyr CSS -->
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 24px 16px;
+      box-sizing: border-box;
+    }
+
+    h1.album-title {
+      font-size: 1.6rem;
+      margin: 0 0 20px 0;
+      text-align: center;
+    }
+
+    .player-card {
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 16px;
+      max-width: 380px;
+      width: 100%;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    .album-art {
+      width: 140px;
+      height: 140px;
+      border-radius: 8px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 12px auto;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin: 0 0 4px 0;
+      text-align: center;
+    }
+
+    p.artist {
+      color: #aaa;
+      margin: 0 0 12px 0;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    :root {
+      --plyr-color-main: #007aff;
+    }
+
+    .plyr {
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    /* Container for buttons */
+    .button-group {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .btn {
+      flex: 1;
+      text-decoration: none;
+      padding: 8px 0;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.85rem;
+      text-align: center;
+      box-sizing: border-box;
+      transition: background 0.2s;
+    }
+
+    .download-btn {
+      background-color: #007aff;
+      color: #ffffff;
+    }
+
+    .download-btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Facebook Button Styling */
+    .facebook-btn {
+      background-color: #1877F2;
+      color: #ffffff;
+    }
+
+    .facebook-btn:hover {
+      background-color: #145dbf;
+    }
+
+    /* YouTube Button Styling */
+    .youtube-btn {
+      background-color: #FF0000;
+      color: #ffffff;
+    }
+
+    .youtube-btn:hover {
+      background-color: #cc0000;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="album-title">Girls of Bond</h1>
+
+  <!-- Track 1 Card (Angel With One Wing) -->
+  <div class="player-card">
+    <img src="Angel-Cover.jpg" alt="Angel With One Wing Artwork" class="album-art">
+    <h2>Angel With One Wing</h2>
+    <p class="artist">davebondband (Athena Mix)</p>
+
+    <audio class="player" controls>
+      <source src="Angel%20with%20one%20wing%20Athena%20Mix.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="button-group">
+      <a href="Angel%20with%20one%20wing%20Athena%20Mix.mp3" download class="btn download-btn">Download</a>
+      <a href="https://www.facebook.com/reel/3267104106810327" target="_blank" rel="noopener noreferrer" class="btn facebook-btn">Watch on Facebook</a>
+    </div>
+  </div>
+
+  <!-- Track 2 Card (Easy Street) -->
+  <div class="player-card">
+    <img src="Scandal-Cover.jpg" alt="Easy Street Artwork" class="album-art">
+    <h2>Easy Street</h2>
+    <p class="artist">davebondband</p>
+
+    <audio class="player" controls>
+      <source src="Easy-Street.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="button-group">
+      <a href="Easy-Street.mp3" download class="btn download-btn">Download</a>
+      <a href="https://youtu.be/xVtYVT0nY5Q" target="_blank" rel="noopener noreferrer" class="btn youtube-btn">Watch on YouTube</a>
+    </div>
+  </div>
+
+  <!-- Track 3 Card (Song 3 with Facebook) -->
+  <div class="player-card">
+    <img src="Song3-Cover.jpg" alt="Third Song Artwork" class="album-art">
+    <h2>Third Song Title</h2>
+    <p class="artist">davebondband</p>
+
+    <audio class="player" controls>
+      <source src="Third-Song.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="button-group">
+      <a href="Third-Song.mp3" download class="btn download-btn">Download</a>
+      <a href="https://www.facebook.com/YOUR_FACEBOOK_REEL_3" target="_blank" rel="noopener noreferrer" class="btn facebook-btn">Watch on Facebook</a>
+    </div>
+  </div>
+
+  <!-- Track 4 Card (Song 4 with Facebook) -->
+  <div class="player-card">
+    <img src="Song4-Cover.jpg" alt="Fourth Song Artwork" class="album-art">
+    <h2>Fourth Song Title</h2>
+    <p class="artist">davebondband</p>
+
+    <audio class="player" controls>
+      <source src="Fourth-Song.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="button-group">
+      <a href="Fourth-Song.mp3" download class="btn download-btn">Download</a>
+      <a href="https://www.facebook.com/YOUR_FACEBOOK_REEL_4" target="_blank" rel="noopener noreferrer" class="btn facebook-btn">Watch on Facebook</a>
+    </div>
+  </div>
+
+  <!-- Include Plyr JS -->
+  <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+  <script>
+    const players = Array.from(document.querySelectorAll('.player')).map(p => new Plyr(p, {
+      controls: ['play', 'progress', 'current-time', 'mute', 'volume']
+    }));
+  </script>
+
+</body>
+</html>
